@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion</title>
+    <link rel="stylesheet" type="text/css" href="style.css" >
+    <link rel="shortcut icon" href="images/IUTlogo.png" type="image/png">
+    <script>
+        function changeLanguage() {
+            var selectElement = document.querySelector('.language');
+            var selectedValue = selectElement.value;
+
+            if (selectedValue === 'fr') {
+                // Redirection vers la page actuelle pour le français
+                window.location.href = 'index.html';
+            } else if (selectedValue === 'eng') {
+                // Redirection vers la page anglaise
+                window.location.href = 'index-eng.html';
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container container-index fade-in">
+        <header>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="logo" title="logo">
+                </a>
+            </div>
+            <div class="custom-select">
+                <span class="globe-icon"><img src="images/earth.png" alt="Globe"></span>
+                <select name="language" class="language" onchange="changeLanguage()">
+                    <option value="fr" selected>Français</option>
+                    <option value="eng">Anglais</option>
+                </select>
+                <span class="arrow">&#9660;</span>
+            </div>
+                      
+        </header>
+        <main class="main-connexion">
+                <div class="text">
+                    <h1>Films et séries en illimité, et bien plus</h1>
+                    <h3>Où que vous soyez.</h3>
+                </div>
+                <div class="champs">
+                    <h4>Connectez-vous avec votre adresse e-mail</h4>
+                    <input type="email" class="email" placeholder="Adresse e-mail">
+                    <a href="episode.html" class="commencer">Commencer</a>
+                </div>
+        </main>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            if (document.body.classList.contains('container-index')) {
+                document.body.classList.add('fade-in');
+            }
+    
+            if (document.body.classList.contains('container-episode')) {
+                document.body.classList.add('fade-in');
+            }
+        });
+    </script>
+    
+</body>
+</html>

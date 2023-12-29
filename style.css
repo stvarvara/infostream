@@ -1,0 +1,703 @@
+/*reset*/
+*,
+*::before,
+*::after {
+	padding: 0;
+	margin: 0;
+	border: 0;
+	box-sizing: border-box;
+}
+a {
+	text-decoration: none;
+	color: inherit;
+}
+li {
+	list-style: none;
+}
+img {
+	vertical-align: top;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: inherit;
+	font-size: inherit;
+}
+html,
+body {
+	height: 100%;
+	line-height: 1;
+}
+textarea,
+button,
+input {
+	font-weight: inherit;
+	font-size: inherit;
+	color: inherit;
+	font-family: inherit;
+}
+button {
+	cursor: pointer;
+	background-color: inherit;
+}
+
+html {
+    height: 100%;
+}
+@font-face {
+    font-family: Netflix Sans;
+    src: url(fonts/NetflixSans-Bold.otf);
+    font-weight: bold;
+  }
+  @font-face {
+    font-family: Netflix Sans;
+    src: url(fonts/NetflixSans-Regular.otf);
+  }
+  @font-face {
+    font-family: Netflix Sans;
+    src: url(fonts/NetflixSans-Medium.otf);
+    font-weight: bolder;
+  }
+  @import url(https://fonts.googleapis.com/css?family=Chivo:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+
+body {
+    font-family: "Netflix Sans", "Chivo", Helvtica, sans-serif;
+    color: #F9F9F9;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    background-color: black;
+}
+.container { 
+    padding:3% 5%; 
+    height: 100%;
+    width: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.container-index {
+    position: relative;
+    background: url("images/photo_fond.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.container-index::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); 
+    pointer-events: none; 
+    z-index: 1;
+}
+.container-episode::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); 
+
+    pointer-events: none;
+    z-index: 1;
+}
+
+
+header, .main-connexion, .main-episode, footer{
+    position: relative;
+    z-index: 2; 
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    max-width: 150px; 
+    height: auto;   
+}
+
+.logo a img {
+    width: 100%;
+    height: auto;  
+}
+.custom-select{
+    position: relative;
+}
+.globe-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.globe-icon img {
+    width: 20px;
+    height: auto; 
+}
+
+.language {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid #AAAAAA;
+    border-radius: 4px;
+    padding: 5px;
+    padding-left: 35px;
+    padding-right: 25px; 
+    color: #fff;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    color: #fff;
+    font-weight: bold;
+    font-size: 20px;
+}
+.main-connexion{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+}
+
+.main-connexion .text, .champs{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+}
+.text h1{
+    font-weight: 700;
+    font-size: 3.7rem;
+    line-height: 110%;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    width: 60%;
+    text-align: center;
+}
+.text h3{
+    font-weight: 400;
+    font-size: 1.5rem;
+    text-align: center;
+}
+.champs h4{
+    font-weight: 500;
+    font-size: 1.2rem;
+    text-align: center;
+}
+input[type="email"] {
+    width: 100%;
+    max-width: 374px; 
+    padding: 14px 16px;
+    background: #31343E;
+    border-radius: 4px;
+    font-weight: 1.2rem;
+    font-size: 16px;
+    line-height: 24px;
+    color: #C8C9CB;
+}
+.commencer {
+    padding: 12px 16px;
+    background: #33CD3B;
+    border-radius: 4px;
+    width: 100%; 
+    max-width: 374px; 
+    font-weight: 700;
+    font-size: 20px;
+    text-transform: uppercase;
+    display: inline-block; 
+    text-align: center; 
+}
+.commencer:hover{
+    background: #459949;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+@media only screen and (max-width: 600px) {
+    .text h1 {
+        font-size: 2rem;
+    }
+    .container{
+        padding: 40px;
+    }
+  }
+@media only screen and (max-width: 380px) {
+    header {
+        flex-direction: column;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+    }
+    .arrow{
+        display: none;
+    }
+    .text h1 {
+        font-size: 1.5rem;
+    }
+    .text h3{
+        font-size: 1rem;
+    }
+    .language {
+        padding-right: 5px;
+        appearance:auto;
+    }
+  }
+  @media only screen and (max-width: 480px){
+    .header-buttons{
+        flex-direction: column;
+        align-items: end;
+    }
+  }
+  .container-episode{
+    position: relative;
+    background: url("images/sherlock.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .header-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.chercher img {
+    width: 24px; 
+    height: 24px; 
+}
+.malist img {
+    width: 17px; 
+    height: 17px; 
+}
+
+.chercher, .malist{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+
+.chercher a, .malist a {
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.chercher:hover, .malist:hover, .infos a:hover{
+    color: #33CD3B;
+}
+.avatar{
+    max-width: 35px; 
+    height: auto; 
+}
+.avatar img{
+    width: 100%;
+    height: auto;
+}
+footer{
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    margin-top: 5%;
+    padding-bottom: 3%;
+   
+}
+.infos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.infos a{
+    font-weight: 500;
+    font-size: 12px;
+}
+.footer-logo {
+    max-width: 92px; 
+    height: auto;   
+}
+
+.footer-logo a img {
+    width: 100%;
+    height: auto;  
+}
+.maininfo{
+    margin-top: 10%;
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    gap: 35px;
+    width: 75%;
+}
+.maininfo h1{
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 82px;
+}
+.smallinfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 15px;
+}
+.infocube {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 8px;
+}
+.regarderbuttons {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 40px;
+}
+.episode1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 25px;
+}
+
+.infocube h4, .infocube h5{
+    font-weight: 500;
+    font-size: 16px;
+}
+.smallinfo p{
+    font-weight: 400;
+    font-size: 16px;
+}
+.regarderbuttons a{
+    font-weight: 700;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+}
+.episode1 h3{
+    font-weight: 500;
+    font-size: 20px;
+
+}
+.episode1 p{
+    font-weight: 400;
+    font-size: 20px;
+    color: #C8C9CB;
+    line-height: 150%;
+}
+.plusep {
+    transition: all .5s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: rgba(0, 0, 0, 0.1);
+    border: 1px solid #FFFFFF;
+    border-radius: 100px;
+    text-align: center;
+}
+
+.plusep img {
+    width: 14px;
+}
+.episode_list img {
+    width: 16px;
+}
+.episode_regarder img {
+    width: 14px;  
+}
+
+.episode_list, .episode_regarder{
+    transition: all .5s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.episode_regarder{
+    padding: 15px 24px;
+    background: #33CD3B;
+    border-radius: 4px;
+}
+.episode_regarder:hover,
+.episode_list:hover,
+.plusep:hover {
+    background: #459949;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.episode_list{
+    padding: 15px 10px;
+    outline: 1px solid #fff;
+    border-radius: 4px;
+}
+.infocube h5{
+    padding: 3px;
+    background-color: #33CD3B;
+    border-radius: 4px;
+}
+a{
+    transition: all .5s ease;
+}
+.saison {
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 50px;
+}
+
+.title-saison {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 24px;
+}
+
+.title-saison h5 {
+    padding: 5px 10px;
+    background-color: #33CD3B;
+    border-radius: 4px;
+}
+
+
+.saison-card:hover .card-title h4 {
+    color: #33CD3B;
+}
+
+.liste-saison {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.saison-card {
+    display: flex;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 252, 252, 0.4);
+    border-radius: 8px;
+    text-decoration: none;
+    color: #fff;
+    overflow: hidden;
+    height: 230px; 
+}
+
+.card-photo {
+    flex: 1;
+    display: flex;
+    align-items: center; 
+    justify-content: flex-end; 
+    padding: 10px;
+}
+
+.card-photo img {
+    max-height: 100%; 
+    width: auto;
+    max-width: 100%;
+    border-radius: 6px;
+}
+
+.card-descr {
+    flex: 1;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    width: 60%; /* Adjust text width */
+}
+
+.card-title h4 {
+    font-size: 16px;
+    margin: 0;
+    margin-bottom: 0.5rem;
+}
+
+.card-title h3 {
+    font-weight: 400;
+    font-size: 14px;
+    color: #C8C9CB;
+    margin: 0;
+}
+
+.card-descr p {
+    font-weight: 400;
+    font-size: 14px;
+    color: #C8C9CB;
+    line-height: 1.5;
+    margin: 0;
+}
+@media only screen and (max-width: 1100px){
+    .card-descr p {
+        font-size: 12px;
+        line-height: 1.4;
+    }
+    .saison-card{
+        height: 200px;
+    }
+    
+}
+@media only screen and (max-width: 1080px){
+    .liste-saison{
+          flex-wrap: wrap;
+    }
+    .column {
+        width: 100%;
+    }
+    .regarderbuttons a{
+        font-size: 14px;
+    }
+    
+}
+@media (max-width: 1000px) {
+    .column {
+        flex: 100%; /* Full width for each column */
+    }
+    .card-photo{
+        justify-content: inherit;
+        flex: inherit;
+    }
+}
+@media only screen and (max-width: 680px){
+    .maininfo h1 {
+        font-size: 34px;
+        line-height: 60px;
+    }
+    .regarderbuttons a{
+        font-size: 12px;
+    }
+    .episode_regarder, .episode_list{
+        padding: 10px;
+    }
+    .plusep{
+        width: 30px;
+        height: 30px;
+    }
+    .episode1 p {
+        font-size: 16px;
+    }
+    .card-photo{
+        justify-content: inherit;
+        flex: 0.8;
+    }
+    .saison-card{
+        height: 180px;
+    }
+}
+@media only screen and (max-width: 500px){
+    .card-photo{
+        flex: 0;
+    }
+    .episode_list, .malist , .avatar{
+        display: none;
+    }
+    .saison-card{
+        height: 170px;
+    }
+    
+}
+@media only screen and (max-width: 420px){
+    .maininfo h1 {
+        font-size: 28px;
+        line-height: 40px;
+    }
+    .regarderbuttons{
+        display: none;
+    }
+    .maininfo{
+        width: 100%;
+    }
+    header{
+        align-items: start;
+    }
+    .card-title h4 {
+        font-size: 12px;
+    }
+    .card-descr{
+        padding: 15px;
+    }
+    .card-photo{
+        display: none;
+    }
+    .saison, .maininfo, .episode1 {
+        gap: 20px;
+    }
+
+    .main-connexion{
+        gap: 1em;
+        
+    }
+    .text h1 {
+        width: 100%;
+    }
+    .container{
+        padding: 40px 30px;
+    }
+
+}
+.fade-in {
+    opacity: 1;
+    pointer-events: auto;
+    transition: opacity 1s ease;
+}
+
+.fade-out {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+}
+html {
+    scroll-behavior: smooth;
+  }
+  .fade-in {
+    opacity: 0;
+    animation: fadeIn ease-in 1;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
